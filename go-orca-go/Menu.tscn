@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://dutwca1pe7pdb"]
+[gd_scene load_steps=10 format=3 uid="uid://dutwca1pe7pdb"]
+
+[ext_resource type="Script" uid="uid://cplrk7bw6bpea" path="res://menu.gd" id="1_uubjt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lthh4"]
 
 [sub_resource type="FontVariation" id="FontVariation_uubjt"]
 spacing_glyph = 7
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx167"]
-bg_color = Color(0.819608, 0.505882, 0.431373, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yleq"]
+bg_color = Color(0.390909, 0.655194, 0.642403, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -19,21 +21,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yleq"]
-bg_color = Color(0.390909, 0.655194, 0.642403, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dolsu"]
-bg_color = Color(0.819608, 0.505882, 0.431373, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylpcl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx167"]
 bg_color = Color(0.819608, 0.505882, 0.431373, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -47,14 +35,30 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylpcl"]
+bg_color = Color(0.819608, 0.505882, 0.431373, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dolsu"]
+bg_color = Color(0.819608, 0.505882, 0.431373, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="Main Menu" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -434.0
 offset_bottom = 580.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uubjt")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -100,15 +104,18 @@ theme_override_constants/separation = 50
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_uubjt")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/hover = SubResource("StyleBoxFlat_cx167")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_uubjt")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5yleq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uubjt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cx167")
 text = "Play"
 
 [node name="Credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/hover = SubResource("StyleBoxFlat_dolsu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ylpcl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lthh4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ylpcl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dolsu")
 text = "Credits"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
