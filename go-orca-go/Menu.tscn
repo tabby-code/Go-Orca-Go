@@ -1,14 +1,15 @@
 [gd_scene load_steps=10 format=3 uid="uid://dutwca1pe7pdb"]
 
-[ext_resource type="Script" uid="uid://cplrk7bw6bpea" path="res://menu.gd" id="1_uubjt"]
+[ext_resource type="Texture2D" uid="uid://cejdc2ge7mneo" path="res://images/pixil-frame-0.png" id="1_uubjt"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lthh4"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5yleq"]
+texture = ExtResource("1_uubjt")
 
 [sub_resource type="FontVariation" id="FontVariation_uubjt"]
 spacing_glyph = 7
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yleq"]
-bg_color = Color(0.390909, 0.655194, 0.642403, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx167"]
+bg_color = Color(0.819608, 0.505882, 0.431373, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -21,7 +22,21 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx167"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yleq"]
+bg_color = Color(0.390909, 0.655194, 0.642403, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dolsu"]
+bg_color = Color(0.819608, 0.505882, 0.431373, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylpcl"]
 bg_color = Color(0.819608, 0.505882, 0.431373, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -35,32 +50,28 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylpcl"]
-bg_color = Color(0.819608, 0.505882, 0.431373, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dolsu"]
-bg_color = Color(0.819608, 0.505882, 0.431373, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [node name="Main Menu" type="Control"]
 layout_mode = 3
+anchor_top = 0.064
+anchor_right = 0.623
+anchor_bottom = 1.895
+offset_left = -11.0
+offset_top = -13.472
+offset_right = -10.696
+offset_bottom = 28.0399
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -434.0
-offset_bottom = 580.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uubjt")
+theme_override_styles/panel = SubResource("StyleBoxTexture_5yleq")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,30 +87,17 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 text = "GO ORCA GO!"
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -3.0
-offset_right = 7.0
-offset_bottom = -3.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_lthh4")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -132.0
-offset_top = -94.0
-offset_right = 132.0
-offset_bottom = 94.0
+anchors_preset = -1
+anchor_left = 0.316
+anchor_top = 0.712
+anchor_right = 0.684
+anchor_bottom = 0.865
+offset_left = 3.11198
+offset_top = -322.336
+offset_right = 2.888
+offset_bottom = -322.22
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
@@ -108,18 +106,15 @@ theme_override_constants/separation = 50
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_uubjt")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_5yleq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_uubjt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cx167")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uubjt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5yleq")
 text = "Play"
 
 [node name="Credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_lthh4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ylpcl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dolsu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ylpcl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lthh4")
 text = "Credits"
-
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]

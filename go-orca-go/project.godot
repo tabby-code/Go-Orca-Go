@@ -12,8 +12,13 @@ config_version=5
 
 config/name="Go Orca Go"
 run/main_scene="uid://dutwca1pe7pdb"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
